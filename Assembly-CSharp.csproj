@@ -46,10 +46,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\cameraController.cs" />
-     <Compile Include="Assets\generation.cs" />
-     <Compile Include="Assets\heros.cs" />
-     <Compile Include="Assets\killTheHero.cs" />
+     <Compile Include="Assets\Scripts\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\cameraController.cs" />
+     <Compile Include="Assets\Scripts\generation.cs" />
+     <Compile Include="Assets\Scripts\heros.cs" />
+     <Compile Include="Assets\Scripts\killTheHero.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
