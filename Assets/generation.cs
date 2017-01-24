@@ -11,7 +11,7 @@ public class generation : MonoBehaviour {
 	void Start() {
 		Instantiate (block, new Vector3(0, 0, 0), Quaternion.identity);
 		for(int i = 1; i <= 10; i++){
-			Instantiate (block, new Vector3(9.9f*i, 0, 0), Quaternion.identity);
+			Instantiate (block, new Vector3(10*i, 0, 0), Quaternion.identity);
 		}
 	}
 	
