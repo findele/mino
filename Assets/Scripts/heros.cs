@@ -64,9 +64,6 @@ public class heros : MonoBehaviour {
 		if (coll.gameObject.tag == "danger" && !dash) {
 			StartCoroutine (Death());
 		}
-		else if (dash){
-			print("I have doge the wall");
-		}
 	}
 
 	void OnCollisionStay2D(Collision2D coll){
@@ -76,7 +73,6 @@ public class heros : MonoBehaviour {
 	}
 
 	IEnumerator Dash(){
-		print ("gatcha!");
 		dash = true;
 		box.enabled = false;
 		canDash = false;
@@ -87,7 +83,7 @@ public class heros : MonoBehaviour {
 		yield return new WaitForSeconds(0.1f);
 		box.enabled = true;
 		yield return new WaitForSeconds(0.5f);
-		moveSpeed = 150;
+		moveSpeed = 100;
 		yield return new WaitForSeconds(1.5f);
 		canDash = true;
 

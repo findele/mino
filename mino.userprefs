@@ -1,10 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\killTheHero.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\heros.cs">
     <Files>
-      <File FileName="Assets\generation.cs" Line="17" Column="2" />
-      <File FileName="Assets\cameraController.cs" Line="18" Column="1" />
-      <File FileName="Assets\killTheHero.cs" Line="11" Column="29" />
+      <File FileName="Assets\Scripts\LevelManager.cs" Line="12" Column="25" />
+      <File FileName="Assets\Scripts\heros.cs" Line="88" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

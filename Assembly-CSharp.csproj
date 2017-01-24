@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\attack.cs" />
+     <Compile Include="Assets\Scripts\breakable.cs" />
      <Compile Include="Assets\Scripts\cameraController.cs" />
      <Compile Include="Assets\Scripts\generation.cs" />
      <Compile Include="Assets\Scripts\heros.cs" />
