@@ -13,6 +13,6 @@ public class killTheHero : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = Vector3.MoveTowards (transform.position, target, 1 * Time.deltaTime);
+		//transform.position = Vector3.MoveTowards (transform.position, target, 1 * Time.deltaTime);
 	}
 }
