@@ -15,12 +15,15 @@ public class heros : MonoBehaviour {
 	private bool dash;
 	private bool canDash;
 	private Collider2D box;
+	float cameraCheck;
+	bool scroll;
 
 	[SerializeField]
 	public GameObject deathCanvas;
 
 	// Use this for initialization
 	void Start () {
+		scroll = false;
 		rg = GetComponent<Rigidbody2D> ();
 		box = GetComponent<Collider2D> ();
 		deathCanvas.SetActive (false);
@@ -29,16 +32,16 @@ public class heros : MonoBehaviour {
 		canDash = true;
 		moveSpeed = 100;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
 
-		if (!death) {
+		if (!death && !scroll) {
 
 			if (!dash) {
-				movement = Input.GetAxis("Vertical") * moveSpeed;
-				movement2 = Input.GetAxis("Horizontal") * moveSpeed;
+				movement = Input.GetAxis ("Vertical") * moveSpeed;
+				movement2 = Input.GetAxis ("Horizontal") * moveSpeed;
 				movement *= Time.deltaTime;
 				movement2 *= Time.deltaTime;
 			} else {
@@ -46,15 +49,31 @@ public class heros : MonoBehaviour {
 				movement2 = lastMovement2;
 			}
 
-			lastMovement = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
-			lastMovement2 = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+			lastMovement = Input.GetAxis ("Vertical") * moveSpeed * Time.deltaTime;
+			lastMovement2 = Input.GetAxis ("Horizontal") * moveSpeed * Time.deltaTime;
 
 
 			rg.velocity = new Vector3 (movement2, movement, 0);
 
-			if (Input.GetButtonDown ("Jump") && canDash &&  !(Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)) {
-				StartCoroutine (Dash());
+			if (Input.GetButtonDown ("Jump") && canDash && !(Input.GetAxis ("Vertical") == 0 && Input.GetAxis ("Horizontal") == 0)) {
+				StartCoroutine (Dash ());
 			}
+		} else if (!death && scroll) {
+			rg.velocity = new Vector3 (0, 0, 0);
+		}
+
+
+		if (scroll) {
+			Camera.main.transform.position = Vector3.Slerp (Camera.main.transform.position, Camera.main.transform.position + new Vector3 (10, 0, 0), 1 * Time.deltaTime);
+		}
+
+		if (transform.position.x > Camera.main.transform.position.x + 5) {
+			scroll = true;
+			cameraCheck = Camera.main.transform.position.x;
+		}
+
+		if (cameraCheck + 10 <= Camera.main.transform.position.x) {
+			scroll = false;
 		}
 
 
@@ -96,4 +115,6 @@ public class heros : MonoBehaviour {
 		yield return new WaitForSeconds(4);
 		SceneManager.LoadScene ("menu");
 	}
+
+
 }

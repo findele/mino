@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\ThrowSpearsDown.cs" />
+     <Compile Include="Assets\Scripts\ThrowSpearsUp.cs" />
      <Compile Include="Assets\Scripts\Trap.cs" />
      <Compile Include="Assets\Scripts\attack.cs" />
      <Compile Include="Assets\Scripts\breakable.cs" />
@@ -56,7 +57,12 @@
      <Compile Include="Assets\Scripts\heros.cs" />
      <Compile Include="Assets\Scripts\killTheHero.cs" />
      <Compile Include="Assets\Scripts\projectileDown.cs" />
+     <Compile Include="Assets\Scripts\projectileLeft.cs" />
      <Compile Include="Assets\Scripts\projectileRight.cs" />
+     <Compile Include="Assets\Scripts\projectileUp.cs" />
+     <Compile Include="Assets\Scripts\throwSpearsLeft.cs" />
+     <Compile Include="Assets\Scripts\throwSpearsRight.cs" />
+     <Compile Include="Assets\tower.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
