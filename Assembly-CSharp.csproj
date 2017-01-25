@@ -47,12 +47,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\ThrowSpearsDown.cs" />
+     <Compile Include="Assets\Scripts\Trap.cs" />
      <Compile Include="Assets\Scripts\attack.cs" />
      <Compile Include="Assets\Scripts\breakable.cs" />
      <Compile Include="Assets\Scripts\cameraController.cs" />
      <Compile Include="Assets\Scripts\generation.cs" />
      <Compile Include="Assets\Scripts\heros.cs" />
      <Compile Include="Assets\Scripts\killTheHero.cs" />
+     <Compile Include="Assets\Scripts\projectileDown.cs" />
+     <Compile Include="Assets\Scripts\projectileRight.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

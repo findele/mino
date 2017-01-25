@@ -61,13 +61,13 @@ public class heros : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
-		if (coll.gameObject.tag == "danger" && !dash) {
+		if ((coll.gameObject.tag == "danger" || coll.gameObject.tag == "lesserDanger") && !dash) {
 			StartCoroutine (Death());
 		}
 	}
 
 	void OnCollisionStay2D(Collision2D coll){
-		if (coll.gameObject.tag == "danger" && !dash) {
+		if ((coll.gameObject.tag == "danger" || coll.gameObject.tag == "lesserDanger") && !dash) {
 			StartCoroutine (Death());
 		}
 	}

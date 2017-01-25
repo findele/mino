@@ -8,8 +8,6 @@ public class breakable : MonoBehaviour {
 	public int life;
 
 	void OnCollisionEnter2D(Collision2D coll) {
-		print (coll.collider.tag);
-
 		if (coll.collider.tag == "hit") {
 			life--;
 			if (life == 0) {
