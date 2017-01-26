@@ -42,121 +42,121 @@ public class Procedural_S1 : MonoBehaviour
          **************************************/
 
        
-        // Gestion emplacement alélatoire des pièges
-        for (int i = 0; i <= 1; i++)       
-        {
-            // Attribution des coordonnées x 
-            x = Random.Range(0, 3);
-            xPiege = EmplacementLanceHaut[x];
+		// Gestion emplacement alélatoire des pièges
+		for (int i = 0; i <= 1; i++)       
+		{
+			// Attribution des coordonnées x 
+			x = Random.Range(0, 3);
+			xPiege = EmplacementLanceHaut[x];
 
-            HautBas = Random.Range(0, 2);
+			HautBas = Random.Range(0, 2);
 
-            if (HautBas > 0)
-            {
-                // Attribution des coordonnées y en fonction si haut ou bas (0 ou 1)
-                yPiege = Random.Range(4, 4);
+			if (HautBas > 0)
+			{
+				// Attribution des coordonnées y en fonction si haut ou bas (0 ou 1)
+				yPiege = Random.Range(4, 4);
 
-                // Creation du piege sur les coordonnées définis
-                // Si la place est déjà occupé, rien n'est placé
-                if (PiegePoseOk <= 8)
-                {
-                    if (GrilleSalle1[xPiege, yPiege] == 0)
-                    {
-                        PiegePoseOk++;
-                        Vector3 pos0 = new Vector3(xPiege, yPiege, 0);
-                        Quaternion rot0 = Quaternion.identity;
-                        GameObject Lance0 = (GameObject)Instantiate(throwSpearsDown, pos0, rot0);
-                        GrilleSalle1[xPiege, yPiege] = PiegePoseOk;
-                    }
-                }
-            }
-            else
-            {
-                // Attribution des coordonnées y en fonction si haut ou bas (0 ou 1)
-                yPiege = Random.Range(2, 2);
+				// Creation du piege sur les coordonnées définis
+				// Si la place est déjà occupé, rien n'est placé
+				if (PiegePoseOk <= 8)
+				{
+					if (GrilleSalle1[xPiege, yPiege] == 0)
+					{
+						PiegePoseOk++;
+						Vector3 pos0 = new Vector3(xPiege, yPiege, 0);
+						Quaternion rot0 = Quaternion.identity;
+						GameObject Lance0 = (GameObject)Instantiate(throwSpearsDown, pos0, rot0);
+						GrilleSalle1[xPiege, yPiege] = PiegePoseOk;
+					}
+				}
+			}
+			else
+			{
+				// Attribution des coordonnées y en fonction si haut ou bas (0 ou 1)
+				yPiege = Random.Range(2, 2);
 
-                // Creation du piege sur les coordonnées définis
-                // Si la place est déjà occupé, rien n'est placé
-                if (PiegePoseOk <= 8)
-                {
-                    if (GrilleSalle1[xPiege, yPiege] == 0)
-                    {
-                        PiegePoseOk++;
-                        Vector3 pos0 = new Vector3(xPiege, yPiege, 0);
-                        Quaternion rot0 = Quaternion.identity;
-                        GameObject Lance0 = (GameObject)Instantiate(throwSpearsUp, pos0, rot0);
-                        GrilleSalle1[xPiege, yPiege] = PiegePoseOk;
-                    }
-                }
-            }
-        }      
-        /************************
+				// Creation du piege sur les coordonnées définis
+				// Si la place est déjà occupé, rien n'est placé
+				if (PiegePoseOk <= 8)
+				{
+					if (GrilleSalle1[xPiege, yPiege] == 0)
+					{
+						PiegePoseOk++;
+						Vector3 pos0 = new Vector3(xPiege, yPiege, 0);
+						Quaternion rot0 = Quaternion.identity;
+						GameObject Lance0 = (GameObject)Instantiate(throwSpearsUp, pos0, rot0);
+						GrilleSalle1[xPiege, yPiege] = PiegePoseOk;
+					}
+				}
+			}
+		}      
+		/************************
         * Autres pieges  salle 1*
         *************************/
 
-                
-        for (int j = 0; j <= 1; j++)
-        {
-            // Attribution des coordonnées x et y
-            xP = Random.Range(0, 5);
-            xPiege2 = EmplacementpiegesX [xP];    
-                
-            yP = Random.Range(0, 4);
-            yPiege2 = EmplacementpiegesY[yP];
 
-            // Definition type de piege
-            ChoixPiegeCentre = Random.Range(0, 4);
+		for (int j = 0; j <= 1; j++)
+		{
+			// Attribution des coordonnées x et y
+			xP = Random.Range(0, 5);
+			xPiege2 = EmplacementpiegesX [xP];    
 
-            // Creation du piege sur les coordonnées définis
-            // Si la place est déjà occupé, rien n'est placé
-            if (PiegePoseOk <= 8)
-                {
-                    if (GrilleSalle1[xPiege2, yPiege2] == 0)
-                    {
-                        PiegePoseOk++;
-                        Vector3 pos1 = new Vector3(xPiege2, yPiege2, 0);
-                        Quaternion rot1 = Quaternion.identity;
-                        //  Spawn du piege en fonction du type
-                        if (ChoixPiegeCentre==0)
-                        {
-                           GameObject tower0 = (GameObject)Instantiate(tower, pos1, rot1);
-                        }
-                        if (ChoixPiegeCentre == 1)
-                        {
-                            GameObject hole0 = (GameObject)Instantiate(hole, pos1, rot1);
-                        }
-                        if (ChoixPiegeCentre == 2)
-                        {
-                            GameObject sawDown0 = (GameObject)Instantiate(sawDown, pos1, rot1);
-                        }
-                        if (ChoixPiegeCentre == 3)
-                        {
-                           GameObject sawUp0 = (GameObject)Instantiate(sawUp, pos1, rot1);
-                        }
-                    // remplissage du tableau
-                    GrilleSalle1[xPiege2, yPiege2] = PiegePoseOk;
+			yP = Random.Range(0, 4);
+			yPiege2 = EmplacementpiegesY[yP];
 
-                    // gestion emplacement pour que 2 pieges ne sois pas cote à cote en y
-                    if (yPiege2 == 3)
-                    {
-                        GrilleSalle1[xPiege2, yPiege2 + 1] = PiegePoseOk;
-                        GrilleSalle1[xPiege2, yPiege2 - 1] = PiegePoseOk;
-                    }
-                    if (yPiege2 == 2)
-                    {
-                        GrilleSalle1[xPiege2, yPiege2 + 1] = PiegePoseOk;                      
-                    }
-                    if (yPiege2 == 4)
-                    {
-                        GrilleSalle1[xPiege2, yPiege2 - 1] = PiegePoseOk;
-                    }
+			// Definition type de piege
+			ChoixPiegeCentre = Random.Range(0, 4);
+
+			// Creation du piege sur les coordonnées définis
+			// Si la place est déjà occupé, rien n'est placé
+			if (PiegePoseOk <= 8)
+			{
+				if (GrilleSalle1[xPiege2, yPiege2] == 0)
+				{
+					PiegePoseOk++;
+					Vector3 pos1 = new Vector3(xPiege2, yPiege2, 0);
+					Quaternion rot1 = Quaternion.identity;
+					//  Spawn du piege en fonction du type
+					if (ChoixPiegeCentre==0)
+					{
+						GameObject tower0 = (GameObject)Instantiate(tower, pos1, rot1);
+					}
+					if (ChoixPiegeCentre == 1)
+					{
+						GameObject hole0 = (GameObject)Instantiate(hole, pos1, rot1);
+					}
+					if (ChoixPiegeCentre == 2)
+					{
+						GameObject sawDown0 = (GameObject)Instantiate(sawDown, pos1, rot1);
+					}
+					if (ChoixPiegeCentre == 3)
+					{
+						GameObject sawUp0 = (GameObject)Instantiate(sawUp, pos1, rot1);
+					}
+					// remplissage du tableau
+					GrilleSalle1[xPiege2, yPiege2] = PiegePoseOk;
+
+					// gestion emplacement pour que 2 pieges ne sois pas cote à cote en y
+					if (yPiege2 == 3)
+					{
+						GrilleSalle1[xPiege2, yPiege2 + 1] = PiegePoseOk;
+						GrilleSalle1[xPiege2, yPiege2 - 1] = PiegePoseOk;
+					}
+					if (yPiege2 == 2)
+					{
+						GrilleSalle1[xPiege2, yPiege2 + 1] = PiegePoseOk;                      
+					}
+					if (yPiege2 == 4)
+					{
+						GrilleSalle1[xPiege2, yPiege2 - 1] = PiegePoseOk;
+					}
 
 
-                }
-                }
-            
-           
-           }
+				}
+			}
+
+
+		}
         }
 
     
