@@ -14,6 +14,7 @@ public class sawUp : Trap {
 
 	// Update is called once per frame
 	void Update () {
+		transform.Rotate (Vector3.back * 10);
 		if(fired)
 			transform.position = Vector3.MoveTowards (transform.position, target, 1 * Time.deltaTime);
 	}
