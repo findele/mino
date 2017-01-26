@@ -43,6 +43,9 @@ public class heros : MonoBehaviour {
 	[SerializeField]
 	public GameObject deathCanvas;
 
+	[SerializeField]
+	public GameObject winCanvas;
+
 	// declaration variables
 	int[,] GrilleSalle1 = new int[120, 5]; // Tableau pour gestion salle1
 	int[] EmplacementLanceHaut = new int[] { 13, 15, 17 }; // Gestion emplacement lances
@@ -90,6 +93,7 @@ public class heros : MonoBehaviour {
 		rg = GetComponent<Rigidbody2D> ();
 		box = GetComponent<Collider2D> ();
 		deathCanvas.SetActive (false);
+		winCanvas.SetActive (false);
 		death = false;
 		dash = false;
 		canDash = true;
@@ -101,6 +105,9 @@ public class heros : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (gameObject.transform.position.x > 65 && !death) {
+			StartCoroutine (Win());
+		}
 
 		if (!death && !scroll) {
 
@@ -134,7 +141,8 @@ public class heros : MonoBehaviour {
 
 		if (transform.position.x > Camera.main.transform.position.x + 5) {
 			musicSource.PlayOneShot (passRoom);
-			generateRoom ();
+			if(gameObject.transform.position.x < 55)
+				generateRoom ();
 			roomNumber++;
 			scroll = true;
 			cameraCheck = Camera.main.transform.position.x;
@@ -289,6 +297,15 @@ public class heros : MonoBehaviour {
 		yield return new WaitForSeconds(2);
 		musicSource.PlayOneShot (end);
 		deathCanvas.SetActive (true);
+		yield return new WaitForSeconds(2);
+		SceneManager.LoadScene ("menu");
+	}
+
+	IEnumerator Win(){
+		death = true;
+		yield return new WaitForSeconds(2);
+		musicSource.PlayOneShot (end);
+		winCanvas.SetActive (true);
 		yield return new WaitForSeconds(2);
 		SceneManager.LoadScene ("menu");
 	}
@@ -482,11 +499,11 @@ public class heros : MonoBehaviour {
 				}
 			}
 		}      
+			
+			for (int i = 0; i < 4; i++) {
+				EmplacementpiegesX [i] = EmplacementpiegesX [i] + 10;
+			}
 
-
-		for (int i = 0; i < 4; i++) {
-			EmplacementpiegesX [i] = EmplacementpiegesX [i] + 10;
-		}
 	}
 
 
