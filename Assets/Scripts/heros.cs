@@ -14,6 +14,7 @@ public class heros : MonoBehaviour {
 	private bool death;
 	private bool dash;
 	private bool canDash;
+	private bool shield;
 	private Collider2D box;
 	float cameraCheck;
 	bool scroll;
@@ -24,6 +25,7 @@ public class heros : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		scroll = false;
+		shield = true;
 		rg = GetComponent<Rigidbody2D> ();
 		box = GetComponent<Collider2D> ();
 		deathCanvas.SetActive (false);
@@ -81,20 +83,30 @@ public class heros : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
-		if ((coll.gameObject.tag == "danger" || coll.gameObject.tag == "lesserDanger") && !dash) {
-			StartCoroutine (Death());
+		if (coll.gameObject.tag == "danger" && !dash) {
+			StartCoroutine (Death ());
+		} else if (coll.gameObject.tag == "lesserDanger" && !dash) {
+			if (shield)
+				shield = false;
+			else
+				StartCoroutine (Death ());
 		}
 	}
 
 	void OnTriggerEnter2D(Collider2D coll){
-		if ((coll.gameObject.tag == "danger" || coll.gameObject.tag == "lesserDanger") && !dash) {
+		if (coll.gameObject.tag == "danger" && !dash) {
 			StartCoroutine (Death());
 			gameObject.GetComponent<SpriteRenderer> ().sortingOrder = -1;
+		} else if (coll.gameObject.tag == "shield") {
+			if (!shield) {
+				shield = true;
+				Destroy (coll.gameObject);
+			}
 		}
 	}
 
 	void OnCollisionStay2D(Collision2D coll){
-		if ((coll.gameObject.tag == "danger" || coll.gameObject.tag == "lesserDanger") && !dash) {
+		if (coll.gameObject.tag == "danger" && !dash) {
 			StartCoroutine (Death());
 		}
 	}

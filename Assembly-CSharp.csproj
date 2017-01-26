@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\ThrowSpearsUp.cs" />
      <Compile Include="Assets\Scripts\Trap.cs" />
      <Compile Include="Assets\Scripts\attack.cs" />
+     <Compile Include="Assets\Scripts\bonusShield.cs" />
      <Compile Include="Assets\Scripts\breakable.cs" />
      <Compile Include="Assets\Scripts\cameraController.cs" />
      <Compile Include="Assets\Scripts\generation.cs" />
