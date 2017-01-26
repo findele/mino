@@ -6,7 +6,7 @@ public class Procedural_S1 : MonoBehaviour
 {
    
     // declaration variables
-    int[,] GrilleMap = new int[20, 5]; // Tableau pour gestion salle1
+    int[,] GrilleSalle1 = new int[20, 5]; // Tableau pour gestion salle1
     int[] EmplacementLanceHaut = new int[] { 13, 15, 17 }; // Gestion emplacement lances
     int[] EmplacementpiegesX = new int[] { 12, 14, 16 ,18 }; // Gestion emplacement autres pièges en X
     int[] EmplacementpiegesY = new int[] {2,3,4}; // Gestion emplacement autres pièges en Y
@@ -60,13 +60,13 @@ public class Procedural_S1 : MonoBehaviour
                 // Si la place est déjà occupé, rien n'est placé
                 if (PiegePoseOk <= 8)
                 {
-                    if (GrilleMap[xPiege, yPiege] == 0)
+                    if (GrilleSalle1[xPiege, yPiege] == 0)
                     {
                         PiegePoseOk++;
                         Vector3 pos0 = new Vector3(xPiege, yPiege, 0);
                         Quaternion rot0 = Quaternion.identity;
                         GameObject Lance0 = (GameObject)Instantiate(throwSpearsDown, pos0, rot0);
-                        GrilleMap[xPiege, yPiege] = PiegePoseOk;
+                        GrilleSalle1[xPiege, yPiege] = PiegePoseOk;
                     }
                 }
             }
@@ -79,13 +79,13 @@ public class Procedural_S1 : MonoBehaviour
                 // Si la place est déjà occupé, rien n'est placé
                 if (PiegePoseOk <= 8)
                 {
-                    if (GrilleMap[xPiege, yPiege] == 0)
+                    if (GrilleSalle1[xPiege, yPiege] == 0)
                     {
                         PiegePoseOk++;
                         Vector3 pos0 = new Vector3(xPiege, yPiege, 0);
                         Quaternion rot0 = Quaternion.identity;
                         GameObject Lance0 = (GameObject)Instantiate(throwSpearsUp, pos0, rot0);
-                        GrilleMap[xPiege, yPiege] = PiegePoseOk;
+                        GrilleSalle1[xPiege, yPiege] = PiegePoseOk;
                     }
                 }
             }
@@ -111,7 +111,7 @@ public class Procedural_S1 : MonoBehaviour
             // Si la place est déjà occupé, rien n'est placé
             if (PiegePoseOk <= 8)
                 {
-                    if (GrilleMap[xPiege2, yPiege2] == 0)
+                    if (GrilleSalle1[xPiege2, yPiege2] == 0)
                     {
                         PiegePoseOk++;
                         Vector3 pos1 = new Vector3(xPiege2, yPiege2, 0);
@@ -134,21 +134,21 @@ public class Procedural_S1 : MonoBehaviour
                            GameObject sawUp0 = (GameObject)Instantiate(sawUp, pos1, rot1);
                         }
                     // remplissage du tableau
-                    GrilleMap[xPiege2, yPiege2] = PiegePoseOk;
+                    GrilleSalle1[xPiege2, yPiege2] = PiegePoseOk;
 
                     // gestion emplacement pour que 2 pieges ne sois pas cote à cote en y
                     if (yPiege2 == 3)
                     {
-                        GrilleMap[xPiege2, yPiege2 + 1] = PiegePoseOk;
-                        GrilleMap[xPiege2, yPiege2 - 1] = PiegePoseOk;
+                        GrilleSalle1[xPiege2, yPiege2 + 1] = PiegePoseOk;
+                        GrilleSalle1[xPiege2, yPiege2 - 1] = PiegePoseOk;
                     }
                     if (yPiege2 == 2)
                     {
-                        GrilleMap[xPiege2, yPiege2 + 1] = PiegePoseOk;                      
+                        GrilleSalle1[xPiege2, yPiege2 + 1] = PiegePoseOk;                      
                     }
                     if (yPiege2 == 4)
                     {
-                        GrilleMap[xPiege2, yPiege2 - 1] = PiegePoseOk;
+                        GrilleSalle1[xPiege2, yPiege2 - 1] = PiegePoseOk;
                     }
 
 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Spikes : Trap {
 
+	private AudioSource musicSource;
+
 	// Use this for initialization
 	void Start () {
 		gameObject.GetComponent<Collider2D> ().enabled = false;
@@ -19,7 +21,9 @@ public class Spikes : Trap {
 	}
 
 	IEnumerator launchSpikes(){
+		musicSource = GetComponent<AudioSource> ();
 		yield return new WaitForSeconds (0.5f);
+		musicSource.Play ();
 		gameObject.GetComponent<Collider2D> ().enabled = true;
 		yield return new WaitForSeconds (2);
 		gameObject.GetComponent<Collider2D> ().enabled = false;

@@ -100,6 +100,7 @@
     <Compile Include="Assets\Scripts\throwSpearsLeft.cs" />
     <Compile Include="Assets\Scripts\throwSpearsRight.cs" />
     <Compile Include="Assets\Scripts\tower.cs" />
+    <Compile Include="Assets\spikeAnim.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
