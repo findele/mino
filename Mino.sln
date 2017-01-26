@@ -1,7 +1,7 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mino", "mino.csproj", "{95DE609C-1185-3D6A-212C-F074A9FC3A1D}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{7389E23C-B3BD-8081-11DF-231923937F60}") = "mino", "Assembly-CSharp.csproj", "{59B967F3-951D-2894-966E-58385C245CE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{95DE609C-1185-3D6A-212C-F074A9FC3A1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{95DE609C-1185-3D6A-212C-F074A9FC3A1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{95DE609C-1185-3D6A-212C-F074A9FC3A1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{95DE609C-1185-3D6A-212C-F074A9FC3A1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59B967F3-951D-2894-966E-58385C245CE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59B967F3-951D-2894-966E-58385C245CE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59B967F3-951D-2894-966E-58385C245CE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59B967F3-951D-2894-966E-58385C245CE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

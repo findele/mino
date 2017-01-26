@@ -6,10 +6,14 @@ public class SawDown : Trap {
 
 	public Vector3 target;
 	private bool fired = false;
+	private AudioSource musicSource;
+	[SerializeField]
+	public AudioClip saw;
 
 	// Use this for initialization
 	void Start () {
 		target = new Vector3 (gameObject.transform.position.x,gameObject.transform.position.y - 2,0);
+		musicSource = GetComponent<AudioSource> ();
 	}
 
 	// Update is called once per frame
@@ -20,6 +24,10 @@ public class SawDown : Trap {
 	}
 
 	public override void Fire(){
-		fired = true;
-	}
+		if (fired) {
+			musicSource.Play ();
+		} else {
+			fired = true;
+			musicSource.PlayOneShot (saw);
+		}	}
 }
