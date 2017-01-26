@@ -31,6 +31,7 @@ public class heros : MonoBehaviour {
 		dash = false;
 		canDash = true;
 		moveSpeed = 100;
+		print (Camera.main.transform.position + new Vector3(10, 0,0));
 	}
 
 	// Update is called once per frame
@@ -58,13 +59,13 @@ public class heros : MonoBehaviour {
 			if (Input.GetButtonDown ("Jump") && canDash && !(Input.GetAxis ("Vertical") == 0 && Input.GetAxis ("Horizontal") == 0)) {
 				StartCoroutine (Dash ());
 			}
-		} else if (!death && scroll) {
+		} else {
 			rg.velocity = new Vector3 (0, 0, 0);
 		}
 
 
 		if (scroll) {
-			Camera.main.transform.position = Vector3.Slerp (Camera.main.transform.position, Camera.main.transform.position + new Vector3 (10, 0, 0), 1 * Time.deltaTime);
+			Camera.main.transform.position = Vector3.MoveTowards (Camera.main.transform.position, Camera.main.transform.position + new Vector3 (10, 0, 0), 10 * Time.deltaTime);
 		}
 
 		if (transform.position.x > Camera.main.transform.position.x + 5) {
@@ -82,6 +83,13 @@ public class heros : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll){
 		if ((coll.gameObject.tag == "danger" || coll.gameObject.tag == "lesserDanger") && !dash) {
 			StartCoroutine (Death());
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D coll){
+		if ((coll.gameObject.tag == "danger" || coll.gameObject.tag == "lesserDanger") && !dash) {
+			StartCoroutine (Death());
+			gameObject.GetComponent<SpriteRenderer> ().sortingOrder = -1;
 		}
 	}
 
@@ -110,9 +118,9 @@ public class heros : MonoBehaviour {
 
 	IEnumerator Death(){
 		death = true;
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(1);
 		deathCanvas.SetActive (true);
-		yield return new WaitForSeconds(4);
+		yield return new WaitForSeconds(1);
 		SceneManager.LoadScene ("menu");
 	}
 
