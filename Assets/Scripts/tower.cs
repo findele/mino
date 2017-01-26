@@ -13,6 +13,9 @@ public class tower : MonoBehaviour {
 	[SerializeField]
 	public GameObject spearRight;
 
+	private AudioSource spearsSource;
+
+
 	// Use this for initialization
 	void Start () {
 		StartCoroutine (FireAtWill());
@@ -25,6 +28,8 @@ public class tower : MonoBehaviour {
 
 	IEnumerator FireAtWill(){
 		while (true) {
+			spearsSource = GetComponent<AudioSource> ();
+			spearsSource.Play ();
 			Instantiate (spearUp, gameObject.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
 			Instantiate (spearDown, gameObject.transform.position + new Vector3(0, -1, 0), Quaternion.identity);
 			Instantiate (spearRight, gameObject.transform.position + new Vector3(1, 0, 0), Quaternion.identity);

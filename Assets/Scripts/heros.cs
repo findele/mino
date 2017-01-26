@@ -19,6 +19,8 @@ public class heros : MonoBehaviour {
 	float cameraCheck;
 	bool scroll;
 
+	private AudioSource musicSource;
+
 	[SerializeField]
 	public GameObject deathCanvas;
 
@@ -33,7 +35,8 @@ public class heros : MonoBehaviour {
 		dash = false;
 		canDash = true;
 		moveSpeed = 100;
-		print (Camera.main.transform.position + new Vector3(10, 0,0));
+		musicSource = GetComponent<AudioSource> ();
+		musicSource.Play ();
 	}
 
 	// Update is called once per frame

@@ -23,7 +23,7 @@ public class generation : MonoBehaviour {
 		for(int i = 1; i <= 10; i++){
 			Instantiate (block, new Vector3(10*i, 0, 0) + cameraDecal, Quaternion.identity);
 		}
-		traps[0] = Instantiate (theTrap, new Vector3(-2.7f, -1f, 0) + cameraDecal, Quaternion.identity);
+		traps[0] = Instantiate (theTrap, new Vector3(-2.7f, 1f, 0) + cameraDecal, Quaternion.identity);
 		trap = traps [0].GetComponent<Trap>();
 		trap.Fire ();
 	}
