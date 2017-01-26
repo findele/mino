@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sons/Turrets_Activation_Sound_Effect.wav.meta
 guid: df9b338e12cdc674892679c209e729a8
 timeCreated: 1485437503
+=======
+guid: 87f9fb7e1c62a7c46aea53d90cecadd3
+timeCreated: 1485439886
+>>>>>>> origin/master:Assets/Sons/Turrets_Activation_Sound_Effect.wav.meta
 licenseType: Free
 AudioImporter:
   serializedVersion: 6

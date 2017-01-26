@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sons/Hero_Fall_Sound_Effect.wav.meta
 guid: 8c0987f62e1b5ad45bd08c1334eccc09
 timeCreated: 1485437502
+=======
+guid: c6ee8d1c8e855d84aae598b78d55aa28
+timeCreated: 1485439901
+>>>>>>> origin/master:Assets/Sons/Hero_Fall_Sound_Effect.wav.meta
 licenseType: Free
 AudioImporter:
   serializedVersion: 6

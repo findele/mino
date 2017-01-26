@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sons/Cleaning_Room_Reward_Sound_Effect.wav.meta
 guid: 05102f7cd686b874eac5655313667ad0
 timeCreated: 1485437494
+=======
+guid: b7aacd890da0cfb499b1648f82631d04
+timeCreated: 1485439901
+>>>>>>> origin/master:Assets/Sons/Cleaning_Room_Reward_Sound_Effect.wav.meta
 licenseType: Free
 AudioImporter:
   serializedVersion: 6

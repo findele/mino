@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sons/Arrow_Sound_Effect.wav.meta
 guid: 6809bd63fe456dc40b45ff2e4d2f5a00
 timeCreated: 1485437494
+=======
+guid: 67a84399c389b8b47b771a2321a13f47
+timeCreated: 1485439885
+>>>>>>> origin/master:Assets/Sons/Arrow_Sound_Effect.wav.meta
 licenseType: Free
 AudioImporter:
   serializedVersion: 6

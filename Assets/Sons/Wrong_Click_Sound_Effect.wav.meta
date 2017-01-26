@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sons/Wrong_Click_Sound_Effect.wav.meta
 guid: a20db92dcbd843048a2de57a89e6191f
 timeCreated: 1485437503
+=======
+guid: 4cc04f34eb76c5741baf1b637e189681
+timeCreated: 1485439884
+>>>>>>> origin/master:Assets/Sons/Wrong_Click_Sound_Effect.wav.meta
 licenseType: Free
 AudioImporter:
   serializedVersion: 6

@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sons/Game_Music.wav.meta
 guid: 7045bcd28c700ad42a567ee9aff9ad09
 timeCreated: 1485437502
+=======
+guid: c7d6c50cbddf67a4e8380b4d777d5667
+timeCreated: 1485439910
+>>>>>>> origin/master:Assets/Sons/Game_Music.wav.meta
 licenseType: Free
 AudioImporter:
   serializedVersion: 6

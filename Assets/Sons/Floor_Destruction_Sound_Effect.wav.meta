@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sons/Floor_Destruction_Sound_Effect.wav.meta
 guid: 9750e5b4983dd71479ed79d8e81a71db
 timeCreated: 1485437503
+=======
+guid: 95502a25bebb8374da9020a34bab0c80
+timeCreated: 1485439900
+>>>>>>> origin/master:Assets/Sons/Floor_Destruction_Sound_Effect.wav.meta
 licenseType: Free
 AudioImporter:
   serializedVersion: 6
