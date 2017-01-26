@@ -13,16 +13,17 @@ public class generation : MonoBehaviour {
 	private float y;
 	public GameObject[] traps;
 	public Trap trap;
+	public Vector3 cameraDecal = new Vector3(5.33f, 2.99f, 0);
 
 
 	// Use this for initialization
 	void Start() {
 		traps = new GameObject[10];
-		Instantiate (block, new Vector3(0, 0, 0), Quaternion.identity);
+		Instantiate (block, cameraDecal, Quaternion.identity);
 		for(int i = 1; i <= 10; i++){
-			Instantiate (block, new Vector3(10*i, 0, 0), Quaternion.identity);
+			Instantiate (block, new Vector3(10*i, 0, 0) + cameraDecal, Quaternion.identity);
 		}
-		traps[0] = Instantiate (theTrap, new Vector3(-2.7f, 1f, 0), Quaternion.identity);
+		traps[0] = Instantiate (theTrap, new Vector3(-2.7f, -1f, 0) + cameraDecal, Quaternion.identity);
 		trap = traps [0].GetComponent<Trap>();
 		trap.Fire ();
 	}

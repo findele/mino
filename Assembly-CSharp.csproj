@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\Spikes.cs" />
      <Compile Include="Assets\Scripts\ThrowSpearsDown.cs" />
      <Compile Include="Assets\Scripts\ThrowSpearsUp.cs" />
      <Compile Include="Assets\Scripts\Trap.cs" />
@@ -60,9 +61,10 @@
      <Compile Include="Assets\Scripts\projectileLeft.cs" />
      <Compile Include="Assets\Scripts\projectileRight.cs" />
      <Compile Include="Assets\Scripts\projectileUp.cs" />
+     <Compile Include="Assets\Scripts\sawUp.cs" />
      <Compile Include="Assets\Scripts\throwSpearsLeft.cs" />
      <Compile Include="Assets\Scripts\throwSpearsRight.cs" />
-     <Compile Include="Assets\tower.cs" />
+     <Compile Include="Assets\Scripts\tower.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
