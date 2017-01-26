@@ -47,6 +47,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\ProcTSD_S1.cs" />
+     <Compile Include="Assets\Scripts\ProcTSD_S2.cs" />
+     <Compile Include="Assets\Scripts\ProcTSU_S1.cs" />
+     <Compile Include="Assets\Scripts\ProcTSU_S2.cs" />
      <Compile Include="Assets\Scripts\SawDown.cs" />
      <Compile Include="Assets\Scripts\Spikes.cs" />
      <Compile Include="Assets\Scripts\ThrowSpearsDown.cs" />

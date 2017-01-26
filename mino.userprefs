@@ -1,22 +1,19 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\heros.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ProcTSD_S1.cs">
     <Files>
-      <File FileName="Assets\Scripts\heros.cs" Line="103" Column="29" />
-      <File FileName="Assets\Scripts\generation.cs" Line="26" Column="49" />
+      <File FileName="Assets\Scripts\heros.cs" Line="38" Column="1" />
+      <File FileName="Assets\Scripts\generation.cs" Line="37" Column="11" />
       <File FileName="Assets\Scripts\killTheHero.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Trap.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ThrowSpearsDown.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\projectileDown.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\projectileRight.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ThrowSpearsUp.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LevelManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\projectileUp.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\projectileLeft.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\throwSpearsLeft.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\throwSpearsRight.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Spikes.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ThrowSpearsDown.cs" Line="12" Column="2" />
+      <File FileName="Assets\Scripts\ThrowSpearsUp.cs" Line="13" Column="26" />
+      <File FileName="Assets\Scripts\throwSpearsLeft.cs" Line="12" Column="26" />
+      <File FileName="Assets\Scripts\throwSpearsRight.cs" Line="12" Column="26" />
+      <File FileName="Assets\Scripts\Spikes.cs" Line="21" Column="29" />
       <File FileName="Assets\Scripts\attack.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\sawUp.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ProcTSD_S1.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
