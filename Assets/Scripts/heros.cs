@@ -19,6 +19,20 @@ public class heros : MonoBehaviour {
 	float cameraCheck;
 	bool scroll;
 
+	[SerializeField]
+	public AudioClip fall;
+	[SerializeField]
+	public AudioClip end;
+	[SerializeField]
+	public AudioClip dashSound;
+	[SerializeField]
+	public AudioClip hitted;
+	[SerializeField]
+	public AudioClip shieldHitted;
+	[SerializeField]
+	public AudioClip takeShield;
+
+
 	private AudioSource musicSource;
 
 	[SerializeField]
@@ -86,35 +100,37 @@ public class heros : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
+		musicSource.PlayOneShot (hitted);
 		if (coll.gameObject.tag == "danger" && !dash) {
 			StartCoroutine (Death ());
 		} else if (coll.gameObject.tag == "lesserDanger" && !dash) {
-			if (shield)
+			if (shield) {
+				musicSource.PlayOneShot (shieldHitted);
 				shield = false;
+			}
 			else
 				StartCoroutine (Death ());
-		}
+		} 
 	}
 
 	void OnTriggerEnter2D(Collider2D coll){
 		if (coll.gameObject.tag == "danger" && !dash) {
+			musicSource.PlayOneShot (hitted);
 			StartCoroutine (Death());
-			gameObject.GetComponent<SpriteRenderer> ().sortingOrder = -1;
 		} else if (coll.gameObject.tag == "shield") {
 			if (!shield) {
+				musicSource.PlayOneShot (takeShield);
 				shield = true;
 				Destroy (coll.gameObject);
 			}
-		}
-	}
-
-	void OnCollisionStay2D(Collision2D coll){
-		if (coll.gameObject.tag == "danger" && !dash) {
-			StartCoroutine (Death());
+		} else if (coll.gameObject.tag == "hole" && !dash) {
+			gameObject.GetComponent<SpriteRenderer> ().sortingOrder = -1;
+			StartCoroutine (Fall ());
 		}
 	}
 
 	IEnumerator Dash(){
+		musicSource.PlayOneShot (dashSound);
 		dash = true;
 		box.enabled = false;
 		canDash = false;
@@ -133,9 +149,22 @@ public class heros : MonoBehaviour {
 
 	IEnumerator Death(){
 		death = true;
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(2);
+		musicSource.PlayOneShot (end);
 		deathCanvas.SetActive (true);
+		yield return new WaitForSeconds(2);
+		SceneManager.LoadScene ("menu");
+	}
+
+	IEnumerator Fall(){
+		death = true;
 		yield return new WaitForSeconds(1);
+		musicSource.PlayOneShot (fall);
+		yield return new WaitForSeconds(1);
+		musicSource.Stop ();
+		musicSource.PlayOneShot (end);
+		deathCanvas.SetActive (true);
+		yield return new WaitForSeconds(2);
 		SceneManager.LoadScene ("menu");
 	}
 

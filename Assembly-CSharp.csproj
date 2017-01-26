@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\throwSpearsLeft.cs" />
      <Compile Include="Assets\Scripts\throwSpearsRight.cs" />
      <Compile Include="Assets\Scripts\tower.cs" />
+     <Compile Include="Assets\spikeAnim.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
