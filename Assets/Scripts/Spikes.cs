@@ -35,7 +35,7 @@ public class Spikes : Trap {
 		gameObject.GetComponent<Collider2D> ().enabled = true;
 		yield return new WaitForSeconds (2);
 		foreach (Transform child in transform)
-			child.GetComponent<SpriteRenderer>().sprite = spikeUp;
+			child.GetComponent<SpriteRenderer>().sprite = spikeDown;
 		gameObject.GetComponent<Collider2D> ().enabled = false;
 		Destroy (this);
 	}

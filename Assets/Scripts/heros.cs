@@ -86,6 +86,9 @@ public class heros : MonoBehaviour {
 	[SerializeField]
 	GameObject spikes;
 
+	[SerializeField]
+	RuntimeAnimatorController controller;
+
 	// Use this for initialization
 	void Start () {
 		scroll = false;
@@ -242,14 +245,16 @@ public class heros : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
-		musicSource.PlayOneShot (hitted);
 		if (coll.gameObject.tag == "danger" && !dash) {
 			if(!death)
+				musicSource.PlayOneShot (hitted);
 				StartCoroutine (Death ());
 		} else if (coll.gameObject.tag == "lesserDanger" && !dash) {
 			if (shield) {
 				musicSource.PlayOneShot (shieldHitted);
 				shield = false;
+				gameObject.GetComponent<Animator> ().SetBool ("shield", false);
+
 			}
 			else
 				if(!death)
@@ -266,6 +271,7 @@ public class heros : MonoBehaviour {
 			if (!shield) {
 				musicSource.PlayOneShot (takeShield);
 				shield = true;
+				gameObject.GetComponent<Animator> ().SetBool ("shield", true);
 				Destroy (coll.gameObject);
 			}
 		} else if (coll.gameObject.tag == "hole" && !dash) {
@@ -412,6 +418,8 @@ public class heros : MonoBehaviour {
 					}
 					if (ChoixPiegeCentre == 2) {
 						GameObject spikes0 = (GameObject)Instantiate (spikes, pos1, rot1);
+						if (yPiege2 == 3)
+							yPiege2--;
 						trapTable [xPiege2, yPiege2] = spikes0;
 					}
 					if (ChoixPiegeCentre == 3) {
